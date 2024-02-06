@@ -6,9 +6,9 @@ public class Main {
     public static void main(String[] args) {
 
         // Creating a User instance
-        User edwardNewgate = new User(1, "Edward", "Newgate", LocalDate.of(1450,4,6) , "EastBlue", UserRole.ADMIN);
+        User edwardNewgate = new User("Edward", "Newgate", LocalDate.of(1450,4,6) , "EastBlue", UserRole.ADMIN);
         // Printing the User information above using overridden toString() method
-        System.out.println(edwardNewgate.toString());
+        System.out.println(edwardNewgate);
 
         try {
             // Trying to find a user role by name

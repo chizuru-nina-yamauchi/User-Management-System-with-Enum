@@ -2,6 +2,8 @@ import java.time.LocalDate;
 
 // User class representing a user entry
 public class User {
+    private static int userIDCounter = 1;
+
     // Attributes
     private final int userID;
     private String firstName;
@@ -11,8 +13,8 @@ public class User {
     private  UserRole role;
 
     // Constructor
-    public User(int userID, String firstName, String lastName, LocalDate dateOfBirth, String location, UserRole role) {
-        this.userID = userID;
+    public User(String firstName, String lastName, LocalDate dateOfBirth, String location, UserRole role) {
+        this.userID = userIDCounter++;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;

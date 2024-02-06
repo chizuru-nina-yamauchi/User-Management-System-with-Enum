@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static User loggedInUser;
-
     public static void main(String[] args) {
 
         // Creating a User instance

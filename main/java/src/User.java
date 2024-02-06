@@ -23,8 +23,6 @@ public class User {
     }
 
     // Getter and setter
-
-
     public int getUserID() {
         return userID;
     }

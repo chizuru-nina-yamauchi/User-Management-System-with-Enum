@@ -10,7 +10,7 @@ public class UserTable {
         this.users = new HashMap<>();
     }
 
-    public User findUserByID(Integer targetUserID){
+    public User findUserById(Integer targetUserID){
         return users.get(targetUserID);
     }
 
@@ -23,7 +23,21 @@ public class UserTable {
         }
     }
 
-    public void deleteUserByID(Integer currentUserID, Integer targetUserID){
+    public void deleteUserById(Integer currentUserID, Integer targetUserID){
+        User currentUser = users.get(currentUserID);
+        User targetUser = users.get(targetUserID);
+        if(currentUser != null && targetUser != null) {
+            if (currentUser.getRole().equals(UserRole.ADMIN) && targetUser.getRole().equals(UserRole.MOD)) {
+                users.remove(targetUserID);
+            } else if (currentUser.getRole().equals(UserRole.MOD) && targetUser.getRole().equals(UserRole.REGULAR)) {
+                users.remove(targetUserID);
+            } else {
+                throw new IllegalArgumentException("The operation is not allowed.");
+            }
+        }else {
+            throw new IllegalArgumentException("Invalid IDs.");
+        }
+
 
     }
 }

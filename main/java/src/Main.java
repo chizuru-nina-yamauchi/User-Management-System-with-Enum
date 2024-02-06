@@ -1,14 +1,19 @@
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
+
+    private static User loggedInUser;
 
     public static void main(String[] args) {
 
         // Creating a User instance
         User edwardNewgate = new User("Edward", "Newgate", LocalDate.of(1450,4,6) , "EastBlue", UserRole.ADMIN);
+        User nicoRObin = new User("Nico", "Robin",LocalDate.of(1524,2,6),"Ohara",UserRole.ADMIN);
         // Printing the User information above using overridden toString() method
         System.out.println(edwardNewgate);
+        System.out.println(nicoRObin);
 
         try {
             // Trying to find a user role by name
@@ -28,7 +33,10 @@ public class Main {
         }
 
 
+
     }
 
 
-}
+    }
+
+

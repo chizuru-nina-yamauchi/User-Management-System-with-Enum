@@ -43,18 +43,20 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        try {
-            try {
+
+
             while (true) {
                 System.out.println("----------------");
                 System.out.println("Choose an option:");
                 System.out.println("1. Login and add User");
                 System.out.println("2. Find User by ID");
-                System.out.println("3. Exit");
+                System.out.println("3. Delete User by ID");
+                System.out.println("4. Exit");
 
                 String optionInput = scanner.nextLine();
                 int option = Integer.parseInt(optionInput);
-
+                try {
+                    try {
                 switch (option) {
 
                         case 1:
@@ -104,19 +106,41 @@ public class Main {
                             }
                             break;
                         case 3:
+                            System.out.println("Enter your ID to check which role you have.");
+                            String userIDToCheckRoleInput = scanner.nextLine();
+                            int userIDToCheckRole = Integer.parseInt(userIDToCheckRoleInput);
+                            User userToDeleteUsers = userTable.findUserById(userIDToCheckRole);
+
+                            if (userToDeleteUsers != null) {
+                                System.out.println("Your current role: " + userToDeleteUsers.getRole());
+
+                                    System.out.println("Enter user ID to delete:");
+                                    String targetUserIDToDeleteInput = scanner.nextLine();
+                                    int targetUserIDToDelete = Integer.parseInt(targetUserIDToDeleteInput);
+
+                                    try {
+                                        userTable.deleteUserById(userIDToCheckRole, targetUserIDToDelete);
+                                        System.out.println("User " + targetUserIDToDelete +  " deleted successfully.");
+                                    } catch (IllegalArgumentException e) {
+                                        System.out.println(e.getMessage());
+                                    }
+                            } else {
+                                System.out.println("User not found.");
+                            }
+                        break;
+                        case 4:
                             System.out.println("Exiting the program.");
                             System.exit(0);
                             break;
                         default:
                             System.out.println("Invalid choice. Try again.");
                         }
+                    }catch (DateTimeParseException e){
+                        System.out.println("Please enter the date with the right format 'YYYY-MM-DD'.");
                     }
-
-                }catch (DateTimeParseException e){
-                    System.out.println("Please enter the date with the right format 'YYYY-MM-DD'.");
+                }catch (NumberFormatException e){
+                    System.out.println("Invalid format. Try again with number.");
                 }
-            }catch (NumberFormatException e){
-                System.out.println("Invalid format. Try again with number.");
             }
 
         }

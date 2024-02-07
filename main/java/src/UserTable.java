@@ -1,5 +1,4 @@
 
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,10 +17,11 @@ public class UserTable {
         return users.get(targetUserID);
     }
 
+    // Add already implemented users
     public void addUserInitially(User user) {
         users.put(user.getUserID(), user);
     }
-
+    // Only ADMIN can add the users
     public void addUser(Integer currentUserId, User newUser) throws IllegalArgumentException{
         User currentUser = users.get(currentUserId);
         if(currentUser != null && currentUser.getRole().equals(UserRole.ADMIN)){

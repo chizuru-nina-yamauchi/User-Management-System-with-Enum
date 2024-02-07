@@ -1,4 +1,5 @@
-My assignment in Java online course from (https://github.com/sontyp/j23-e02/tree/main).
+My assignment with Enum in Java online course from (https://github.com/sontyp/j23-e02/tree/main).
+The result photos at the end.
 
 ---
 
@@ -71,3 +72,7 @@ Find a way to make sure how to edit `User` entries with respect to the privilege
 Find a way to prevent that.
 
 ---
+
+## The result photos
+![pic1](./main/resources/pic1.png)
+![pic2](./main/resources/pic2.png)

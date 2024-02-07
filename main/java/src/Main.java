@@ -11,7 +11,7 @@ public class Main {
 
         // Creating a User instance
         User edwardNewgate = new User("Edward", "Newgate", LocalDate.of(1450,4,6) , "EastBlue", UserRole.ADMIN);
-        User nicoRObin = new User("Nico", "Robin",LocalDate.of(1524,2,6),"Ohara",UserRole.ADMIN);
+        User nicoRObin = new User("Nico", "Robin",LocalDate.of(1494,2,6),"Ohara",UserRole.ADMIN);
         // Printing the User information above using overridden toString() method
         System.out.println(edwardNewgate);
         System.out.println(nicoRObin);
@@ -33,7 +33,8 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-        System.out.println("User Interaction Start.");
+        System.out.println("----------------");
+        System.out.println("User Interaction Start!");
 
 
         UserTable userTable = new UserTable();

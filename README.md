@@ -75,4 +75,16 @@ Find a way to prevent that.
 
 ## The result photos
 ![pic1](./main/resources/pic1.png)
+
 ![pic2](./main/resources/pic2.png)
+- After adding 'Delete User By Id' option
+
+![pic3](./main/resources/pic3.png)
+
+![pic4](./main/resources/pic4.png)
+
+![pic5](./main/resources/pic5.png)
+
+![pic6](./main/resources/pic6.png)
+
+![pic7](./main/resources/pic7.png)

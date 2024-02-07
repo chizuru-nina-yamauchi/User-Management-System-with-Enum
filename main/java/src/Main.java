@@ -67,7 +67,7 @@ public class Main {
 
                             if (loginUser != null) {
                                 System.out.println("Login successful. Welcome, " + loginUser.getFirstName() + " " + loginUser.getLastName() + " .");
-                                if (loginUser != null && loginUser.getRole() == UserRole.ADMIN) {
+                                if (loginUser.getRole() == UserRole.ADMIN) {
                                     System.out.println("Enter new user details:");
                                     System.out.print("First Name: ");
                                     String firstName = scanner.nextLine();
